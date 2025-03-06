@@ -1,0 +1,14 @@
+{
+  "name": "com.openugd.http-transport-api",
+  "displayName": "HTTP Transport API",
+  "version": "1.0.0",
+  "unity": "2019.4",
+  "author": "https://github.com/openugd",
+  "description": "require .NET 4x\n",
+  "keywords": [
+    "http",
+    "tranport"
+  ],
+  "dependencies": {},
+  "category": "Unity"
+}

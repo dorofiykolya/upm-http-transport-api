@@ -11,7 +11,7 @@ namespace HttpTransport.Rpc
         public bool IsOk => StatusCode == 200;
     }
 
-    public class RequestResult<T> : RequestResult
+    public class RequestResult<T> : RequestResult where T : class
     {
         public T Result { get; set; }
 
@@ -19,7 +19,7 @@ namespace HttpTransport.Rpc
         {
             StatusCode = statusCode;
             ErrorCode = errorCode;
-            Result = (T)value;
+            Result = value as T;
             IsNetworkError = networkError;
         }
     }

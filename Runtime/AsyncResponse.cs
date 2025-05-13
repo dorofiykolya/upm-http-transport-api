@@ -8,7 +8,7 @@ namespace HttpTransport.Rpc
         bool Resolved { get; }
     }
 
-    public interface IAsyncResponse<T> : IAsyncResponse
+    public interface IAsyncResponse<T> : IAsyncResponse where T : class
     {
         IDisposable Subscribe(Action<RequestResult<T>> callback);
 
@@ -21,7 +21,7 @@ namespace HttpTransport.Rpc
         public abstract void Dispose();
     }
 
-    public class AsyncResponse<T> : AsyncResponse, IAsyncResponse<T>
+    public class AsyncResponse<T> : AsyncResponse, IAsyncResponse<T> where T : class
     {
         private List<Action<RequestResult<T>>> _actions = new List<Action<RequestResult<T>>>();
         private RequestResult<T> _result;
